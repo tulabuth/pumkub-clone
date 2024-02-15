@@ -1,10 +1,9 @@
 import { Module } from '@nestjs/common';
-import { MemberApiController } from './member-api.controller';
-import { MemberApiService } from './member-api.service';
+import { getModulesMember } from './modules/member.util';
 
 @Module({
-  imports: [],
-  controllers: [MemberApiController],
-  providers: [MemberApiService],
+  imports: [
+    ...getModulesMember(),
+  ],
 })
 export class MemberApiModule {}
