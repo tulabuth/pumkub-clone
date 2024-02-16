@@ -1,5 +1,7 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { registerAs } from '@nestjs/config';
+import { Users } from '@app/common/entities/Users';
+import { Languages } from '@app/common/entities/Language';
 
 
 export default registerAs(
@@ -25,7 +27,8 @@ export default registerAs(
       ],
     },
     entities: [
-      
+      Users,
+      Languages,
     ],
     timezone: '+07:00',
     synchronize: true,
